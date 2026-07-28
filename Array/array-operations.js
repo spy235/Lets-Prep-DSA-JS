@@ -55,3 +55,73 @@ const bolleanVar2 = fruits3.every(item => item == 'apple'); // true
 console.log(bolleanVar2)
 
 console.log(fruits3.every(item => item == 'bannada')) // false
+
+// push() (Adds to the end)
+const cart = ['apple', 'banana'];
+const newLength = cart.push('orange', 'grape'); 
+
+console.log(cart);      // ['apple', 'banana', 'orange', 'grape'] (Mutated!)
+console.log(newLength); // 4
+
+// pop() (Removes from the end)
+const tasks = ['clean', 'cook', 'work'];
+const removedTask = tasks.pop(); 
+
+console.log(tasks);       // ['clean', 'cook'] (Mutated!)
+console.log(removedTask); // 'work'
+
+// unshift() (Adds to the beginning)
+const queue = ['Alice', 'Bob'];
+queue.unshift('VIP Charlie'); 
+
+console.log(queue); // ['VIP Charlie', 'Alice', 'Bob'] (Mutated!)
+
+// shift() (Removes from the beginning)
+const line = ['First', 'Second', 'Third'];
+const nextUp = line.shift(); 
+
+console.log(line);   // ['Second', 'Third'] (Mutated!)
+console.log(nextUp); // 'First'
+
+// splice() is the Swiss Army knife of array mutators. 
+// You can use it to remove, add, or replace items at any specific index.
+// Syntax: splice(startIndex, deleteCount, itemToAdd1, itemToAdd2...)
+
+const months = ['Jan', 'March', 'April', 'June'];
+
+// 1. Insert 'Feb' at index 1 (delete 0 items)
+months.splice(1, 0, 'Feb');
+console.log(months); // ['Jan', 'Feb', 'March', 'April', 'June']
+
+// 2. Replace 'June' (at index 4) with 'May' (delete 1 item, add 'May')
+const removed = months.splice(4, 1, 'May');
+console.log(months);  // ['Jan', 'Feb', 'March', 'April', 'May'] (Mutated!)
+console.log(removed); // ['June'] (splice always returns an array of removed items)
+
+// slice() (Copies a section)
+//These methods leave your original arrays completely untouched and 
+// hand you a brand new array to work with.
+// Syntax: slice(startIndex, endIndex) (End index is not included in the copy)
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+const middleAnimals = animals.slice(1, 4); 
+
+console.log(middleAnimals); // ['bison', 'camel', 'duck'] (New array!)
+console.log(animals);       // ['ant', 'bison', 'camel', 'duck', 'elephant'] (Untouched!)
+
+// Pro-tip: Calling .slice() with no arguments makes a shallow copy of the whole array
+const exactCopy = animals.slice();
+
+// concat() (Merges arrays)
+const letters = ['a', 'b', 'c'];
+const numbers = [1, 2, 3];
+
+const combined = letters.concat(numbers);
+
+console.log(combined); // ['a', 'b', 'c', 1, 2, 3] (New array!)
+console.log(letters);  // ['a', 'b', 'c'] (Untouched!)
+
+
+
+
+
